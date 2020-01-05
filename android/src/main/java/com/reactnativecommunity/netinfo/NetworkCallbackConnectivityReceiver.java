@@ -87,7 +87,7 @@ class NetworkCallbackConnectivityReceiver extends ConnectivityReceiver {
         } else {
             if (mNetwork != null && networkInfo != null) {
                 NetworkInfo.DetailedState detailedConnectionState = networkInfo.getDetailedState();
-                if (!NetworkInfo.DetailedState.CONNECTED.equals(detailedConnectionState)) {
+                if (detailedConnectionState != null && !NetworkInfo.DetailedState.CONNECTED.equals(detailedConnectionState)) {
                     isInternetSuspended = true;
                 }
             }
